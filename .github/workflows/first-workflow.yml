@@ -8,12 +8,17 @@ jobs:
         steps:
         - name: Checkout repo
           uses: actions/checkout@v4
-          
+
         - name: Welcome Message
           run: echo "first github runner action job"
 
-        - name: List files
-          run: ls
+        - name: List and read file in same step # use pipe | symbol
+          run: |
+            ls
+            cat README.md
 
-        - name: Read file
-          run: cat README.md
+        # - name: List files
+        #   run: ls
+
+        # - name: Read file
+        #   run: cat README.md
