@@ -1,0 +1,19 @@
+name: Execute ASCII Script
+
+on: push
+
+jobs:
+    ascii_script:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Checkout repo
+          uses: actions/checkout@v4
+
+        - name: List files
+          run: ls -ltra
+
+        - name: Execute ascii script
+          run: |
+            chmod +x ascii-script.sh
+            ./ascii-script.sh
